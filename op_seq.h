@@ -6,7 +6,7 @@
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/24 02:10:06 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/06/24 03:09:16 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/06/28 22:52:52 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 typedef struct s_op_seq
 {
-	char	*arr[40000];
+	char	*arr[100000];
 	int		len;
 }				t_op_seq;
 

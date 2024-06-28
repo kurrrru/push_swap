@@ -26,6 +26,12 @@ t_stack	*stack_init()
 	if (!stack)
 		return (NULL);
 	max_size = 10000;
+	stack->arr = (int *)malloc(sizeof(int) * (max_size + 1));
+	if (!stack->arr)
+	{
+		free(stack);
+		return (NULL);
+	}
 	stack->arr_len = max_size + 1;
 	stack->bottom = 0;
 	stack->top = -1;
@@ -38,6 +44,7 @@ t_stack	*stack_init()
 // return: none
 void	stack_free(t_stack *stack)
 {
+	free(stack->arr);
 	free(stack);
 }
 

@@ -18,7 +18,7 @@
 
 typedef struct s_stack
 {
-	int		arr[1000];
+	int		*arr;
 	int		arr_len;
 	int		bottom;
 	int		top;
