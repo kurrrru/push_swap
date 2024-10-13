@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   op_seq.h                                           :+:      :+:    :+:   */
+/*   deque_swap.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/24 02:10:06 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/06/28 22:52:52 by nkawaguc         ###   ########.fr       */
+/*   Created: 2024/10/13 12:01:23 by nkawaguc          #+#    #+#             */
+/*   Updated: 2024/10/13 12:03:16 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef OP_SEQ_H
-# define OP_SEQ_H
+#include "deque.h"
 
-# include <stdlib.h>
-
-typedef struct s_op_seq
+void	deque_swap_front(t_deque *deque)
 {
-	char	*arr[100000];
-	int		len;
-}				t_op_seq;
+	int	front1;
+	int	front2;
 
-t_op_seq	*op_seq_init();
-void		op_seq_free(t_op_seq *op);
-void		op_seq_push(t_op_seq *op, char *op_str);
-
-#endif
+	if (!deque || deque_size(deque) < 2)
+		return ;
+	front1 = deque_at_from_front(deque, 0);
+	front2 = deque_at_from_front(deque, 1);
+	deque_pop_front(deque);
+	deque_pop_front(deque);
+	deque_push_front(deque, front1);
+	deque_push_front(deque, front2);
+}
