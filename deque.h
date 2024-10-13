@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   deque.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: nkawaguc <nkawaguc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 11:33:02 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/13 12:02:04 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/10/13 16:37:25 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ typedef struct s_deque
 	int		tail;
 }			t_deque;
 
-t_deque	*deque_init();
+t_deque	*deque_init(void);
 void	deque_free(t_deque *deque);
 int		deque_size(t_deque *deque);
 int		deque_empty(t_deque *deque);

@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   deque_basic.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: nkawaguc <nkawaguc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 11:42:06 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/13 11:55:48 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/10/13 16:37:30 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "deque.h"
 
-t_deque	*deque_init()
+t_deque	*deque_init(void)
 {
 	t_deque	*deque;
 
