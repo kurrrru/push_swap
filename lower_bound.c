@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   lower_bound.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/14 13:48:27 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/14 22:15:31 by nkawaguc         ###   ########.fr       */
+/*   Created: 2024/10/14 21:49:18 by nkawaguc          #+#    #+#             */
+/*   Updated: 2024/10/14 21:49:34 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	push_swap(int *input_array, int size)
+int	lower_bound(int *arr, int size, int target)
 {
-	t_deque	*stack_a;
-	t_deque	*stack_b;
-	int		i;
+	int	left;
+	int	right;
+	int	mid;
 
-	compress(input_array, size);
-	stack_a = deque_init();
-	stack_b = deque_init();
-	if (stack_a == NULL || stack_b == NULL)
-		error();
-	i = -1;
-	while (++i < size)
-		deque_push_front(stack_a, input_array[i]);
-	// sort
+	left = -1;
+	right = size;
+	while (right - left > 1)
+	{
+		mid = (left + right) / 2;
+		if (arr[mid] >= target)
+			right = mid;
+		else
+			left = mid;
+	}
+	return (right);
 }

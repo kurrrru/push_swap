@@ -6,7 +6,7 @@
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 12:39:18 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/14 15:58:27 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/10/14 22:00:44 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@
 # define FALSE 0
 # define FAILURE -1
 # define SUCCESS 0
+# define INF INT_MAX
 
 # define VALID_ARGC_MIN 2
 # define MSG_ERROR "Error"
@@ -35,6 +36,12 @@ int		is_valid_string(const char *str);
 
 // compress.c
 void	compress(int *input_array, int size);
+
+// lower_bound.c
+int		lower_bound(int *arr, int size, int target);
+
+// lis.c
+int		*lis(int *arr, int size, int *lis_size);
 
 // error.c
 void	error(void);

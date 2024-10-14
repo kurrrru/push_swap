@@ -6,7 +6,7 @@
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 14:49:53 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/14 15:57:05 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/10/14 21:49:41 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 static void	quick_sort(int *arr, int left, int right);
 static void	swap(int *a, int *b);
-static int	lower_bound(int *arr, int size, int target);
 
 void	compress(int *arr, int size)
 {
@@ -72,23 +71,4 @@ static void	swap(int *a, int *b)
 	tmp = *a;
 	*a = *b;
 	*b = tmp;
-}
-
-static int	lower_bound(int *arr, int size, int target)
-{
-	int	left;
-	int	right;
-	int	mid;
-
-	left = -1;
-	right = size;
-	while (right - left > 1)
-	{
-		mid = (left + right) / 2;
-		if (arr[mid] >= target)
-			right = mid;
-		else
-			left = mid;
-	}
-	return (right);
 }

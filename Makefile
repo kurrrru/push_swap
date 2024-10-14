@@ -1,6 +1,6 @@
 NAME		= push_swap
 DEQUE_SRCS	= deque_basic.c deque_access.c deque_push_pop.c deque_rotate.c deque_swap.c
-SRCS		= main.c push_swap.c is_valid_string.c compress.c is_duplicated.c is_empty_array.c error.c $(DEQUE_SRCS)
+SRCS		= main.c push_swap.c is_valid_string.c compress.c lis.c lower_bound.c is_duplicated.c is_empty_array.c error.c $(DEQUE_SRCS)
 OBJS		= $(SRCS:.c=.o)
 LIBDIR		= libft
 LIB			= libft.a
