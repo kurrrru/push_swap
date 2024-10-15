@@ -6,11 +6,12 @@
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 14:49:53 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/14 21:49:41 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/10/15 23:19:40 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdio.h>
 
 static void	quick_sort(int *arr, int left, int right);
 static void	swap(int *a, int *b);
@@ -41,26 +42,25 @@ static void	quick_sort(int *arr, int left, int right)
 	int	i;
 	int	j;
 
-	if (left >= right)
+	if (left + 1 >= right)
 		return ;
 	swap(&arr[left], &arr[(left + right) / 2]);
 	pivot = arr[left];
 	i = left + 1;
-	j = right;
+	j = right - 1;
 	while (1)
 	{
-		while (arr[i] < pivot)
+		while (i < right && arr[i] <= pivot)
 			i++;
-		while (pivot < arr[j])
+		while (left <= j && pivot < arr[j])
 			j--;
 		if (i >= j)
 			break ;
 		swap(&arr[i], &arr[j]);
-		i++;
-		j--;
 	}
-	swap(&arr[left], &arr[j]);
-	quick_sort(arr, left, i - 1);
+	if (left < j)
+		swap(&arr[left], &arr[j]);
+	quick_sort(arr, left, j);
 	quick_sort(arr, j + 1, right);
 }
 

@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/14 13:48:27 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/15 22:38:54 by nkawaguc         ###   ########.fr       */
+/*   Created: 2024/10/15 18:25:07 by nkawaguc          #+#    #+#             */
+/*   Updated: 2024/10/15 23:01:57 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdio.h>
 
-void	push_swap(int *input_array, int size)
+void	sort(t_deque *stack_a, t_deque *stack_b, int *input_array)
 {
-	t_deque	*stack_a;
-	t_deque	*stack_b;
-	int		i;
+	int	*lis_array;
+	int	lis_size;
+	int	i;
 
-	compress(input_array, size);
-	stack_a = deque_init();
-	stack_b = deque_init();
-	if (stack_a == NULL || stack_b == NULL)
+	lis_array = lis(input_array, deque_size(stack_a), &lis_size);
+	if (lis_array == NULL)
 		error();
 	i = -1;
-	while (++i < size)
-		deque_push_front(stack_a, input_array[i]);
-	sort(stack_a, stack_b, input_array);
-	deque_free(stack_a);
-	deque_free(stack_b);
+	while (++i < lis_size)
+		printf("%d\n", lis_array[i]);
+	free(lis_array);
+	(void)stack_b;
 }

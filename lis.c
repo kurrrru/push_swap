@@ -6,11 +6,12 @@
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 21:48:18 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/14 22:14:29 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/10/15 23:19:17 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdio.h>
 
 static void	lis_dp(int *arr, int size, int *dp, int *idx);
 static int	*lis_traceback(int *arr, int size, int *idx, int lis_size);
@@ -41,7 +42,7 @@ static void	lis_dp(int *arr, int size, int *dp, int *idx)
 		dp[i] = INF;
 		idx[i] = -1;
 	}
-	i = 0;
+	i = -1;
 	while (++i < size)
 	{
 		idx[i] = lower_bound(dp, size, arr[i]);

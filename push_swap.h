@@ -6,7 +6,7 @@
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 12:39:18 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/14 22:00:44 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/10/15 22:36:40 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,5 +51,8 @@ int		is_empty_array(int argc);
 
 // is_duplicated.c
 int		is_duplicated(int *arr, int size);
+
+// sort.c
+void	sort(t_deque *stack_a, t_deque *stack_b, int *input_array);
 
 #endif
