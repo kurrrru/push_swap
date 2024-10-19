@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   deque.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nkawaguc <nkawaguc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 11:33:02 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/13 16:37:25 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/10/19 18:20:02 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,7 @@ void	deque_pop_back(t_deque *deque);
 void	deque_rotate_front(t_deque *deque);
 void	deque_rotate_back(t_deque *deque);
 void	deque_swap_front(t_deque *deque);
+int		deque_lower_bound(t_deque *deque, int target);
+int		deque_find(t_deque *deque, int target);
 
 #endif

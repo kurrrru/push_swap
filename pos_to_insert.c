@@ -1,32 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   pos_to_insert.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/14 13:48:27 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/19 17:04:09 by nkawaguc         ###   ########.fr       */
+/*   Created: 2024/10/19 19:05:57 by nkawaguc          #+#    #+#             */
+/*   Updated: 2024/10/19 19:09:34 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	push_swap(int *input_array, int size)
+int	pos_to_insert(t_deque *stack_a, int target)
 {
-	t_deque	*stack_a;
-	t_deque	*stack_b;
-	int		i;
+	int	i;
+	int	size;
+	int	val1;
+	int	val2;
 
-	compress(input_array, size);
-	stack_a = deque_init();
-	stack_b = deque_init();
-	if (stack_a == NULL || stack_b == NULL)
-		error();
 	i = -1;
+	size = deque_size(stack_a);
 	while (++i < size)
-		deque_push_back(stack_a, input_array[i]);
-	sort(stack_a, stack_b, input_array);
-	deque_free(stack_a);
-	deque_free(stack_b);
+	{
+		val1 = deque_at_from_front(stack_a, (i + size - 1) % size);
+		val2 = deque_at_from_front(stack_a, i);
+		if (val1 < target && target < val2)
+			return (i);
+		if (val1 > val2 && (val1 < target || target < val2))
+			return (i);
+	}
+	return (ERROR);
 }

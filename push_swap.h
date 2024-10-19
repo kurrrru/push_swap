@@ -6,7 +6,7 @@
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 12:39:18 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/15 22:36:40 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/10/19 19:10:04 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,24 @@
 # include <limits.h>
 # include "deque.h"
 # include "libft/libft.h"
+# include "op.h"
 
 # define TRUE 1
 # define FALSE 0
 # define FAILURE -1
 # define SUCCESS 0
+# define ERROR -1
 # define INF INT_MAX
 
 # define VALID_ARGC_MIN 2
 # define MSG_ERROR "Error"
+
+typedef struct s_best
+{
+	int	target;
+	int	rotate_a;
+	int	rotate_b;
+}	t_best;
 
 // push_swap.c
 void	push_swap(int *input_array, int size);
@@ -54,5 +63,15 @@ int		is_duplicated(int *arr, int size);
 
 // sort.c
 void	sort(t_deque *stack_a, t_deque *stack_b, int *input_array);
+
+// sort_push_to_b.c
+void	sort_push_to_b(t_deque *stack_a, t_deque *stack_b, int *input_array,
+			t_optimizer *opt);
+
+// sort_push_to_a.c
+void	sort_push_to_a(t_deque *stack_a, t_deque *stack_b, t_optimizer *opt);
+
+// pos_to_insert.c
+int		pos_to_insert(t_deque *stack_a, int target);
 
 #endif

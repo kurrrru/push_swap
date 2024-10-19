@@ -6,7 +6,7 @@
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 21:48:18 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/15 23:19:17 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/10/19 16:08:20 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,9 +56,12 @@ static int	*lis_traceback(int *arr, int size, int *idx, int lis_size)
 	int	i;
 	int	j;
 
-	ans = (int *)malloc(sizeof(int) * lis_size);
+	ans = (int *)malloc(sizeof(int) * size);
 	if (ans == NULL)
 		error();
+	i = -1;
+	while (++i < size)
+		ans[i] = INF;
 	i = lis_size;
 	j = size;
 	while (--j >= 0)

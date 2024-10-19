@@ -1,32 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   deque_find.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/14 13:48:27 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/19 17:04:09 by nkawaguc         ###   ########.fr       */
+/*   Created: 2024/10/19 18:19:31 by nkawaguc          #+#    #+#             */
+/*   Updated: 2024/10/19 18:28:36 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "deque.h"
 
-void	push_swap(int *input_array, int size)
+int	deque_find(t_deque *deque, int target)
 {
-	t_deque	*stack_a;
-	t_deque	*stack_b;
-	int		i;
+	int	i;
 
-	compress(input_array, size);
-	stack_a = deque_init();
-	stack_b = deque_init();
-	if (stack_a == NULL || stack_b == NULL)
-		error();
 	i = -1;
-	while (++i < size)
-		deque_push_back(stack_a, input_array[i]);
-	sort(stack_a, stack_b, input_array);
-	deque_free(stack_a);
-	deque_free(stack_b);
+	while (++i < deque_size(deque))
+	{
+		if (deque_at_from_front(deque, i) == target)
+			return (i);
+	}
+	return (DEQUE_EXCEPTION_VALUE);
 }

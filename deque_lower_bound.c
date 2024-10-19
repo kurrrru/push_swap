@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   deque_lower_bound.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/14 13:48:27 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/19 17:04:09 by nkawaguc         ###   ########.fr       */
+/*   Created: 2024/10/19 16:35:35 by nkawaguc          #+#    #+#             */
+/*   Updated: 2024/10/19 18:15:42 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "deque.h"
+#include <stdio.h>
 
-void	push_swap(int *input_array, int size)
+int	deque_lower_bound(t_deque *deque, int target)
 {
-	t_deque	*stack_a;
-	t_deque	*stack_b;
-	int		i;
+	int	left;
+	int	right;
+	int	mid;
 
-	compress(input_array, size);
-	stack_a = deque_init();
-	stack_b = deque_init();
-	if (stack_a == NULL || stack_b == NULL)
-		error();
-	i = -1;
-	while (++i < size)
-		deque_push_back(stack_a, input_array[i]);
-	sort(stack_a, stack_b, input_array);
-	deque_free(stack_a);
-	deque_free(stack_b);
+	left = -1;
+	right = deque_size(deque);
+	while (right - left > 1)
+	{
+		mid = (left + right) / 2;
+		if (deque_at_from_front(deque, mid) >= target)
+			right = mid;
+		else
+			left = mid;
+	}
+	return (right);
 }
