@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   deque.h                                            :+:      :+:    :+:   */
+/*   deque_bonus.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 11:33:02 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/19 21:34:04 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/10/19 22:42:31 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DEQUE_H
-# define DEQUE_H
+#ifndef DEQUE_BONUS_H
+# define DEQUE_BONUS_H
 
 # include <stdlib.h>
 

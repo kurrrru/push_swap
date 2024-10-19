@@ -6,7 +6,7 @@
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 12:39:18 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/19 19:10:04 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/10/19 23:18:37 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,14 @@ void	sort_push_to_b(t_deque *stack_a, t_deque *stack_b, int *input_array,
 // sort_push_to_a.c
 void	sort_push_to_a(t_deque *stack_a, t_deque *stack_b, t_optimizer *opt);
 
+// sort_small_case.c
+void	sort_small_case(t_deque *stack_a, t_deque *stack_b, t_optimizer *opt);
+
 // pos_to_insert.c
 int		pos_to_insert(t_deque *stack_a, int target);
+
+// multiple_rotate.c
+void	multiple_rotate_a(t_deque *stack_a, int rotate_a, t_optimizer *opt);
+void	multiple_rotate_b(t_deque *stack_b, int rotate_b, t_optimizer *opt);
 
 #endif

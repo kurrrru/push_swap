@@ -6,16 +6,15 @@
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/19 16:22:18 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/19 19:41:33 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/10/19 23:18:09 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	multiple_rotate_a(t_deque *stack_a, int rotate_a, t_optimizer *opt);
-static void	multiple_rotate_b(t_deque *stack_b, int rotate_b, t_optimizer *opt);
-static void find_best(t_deque *stack_a, t_deque *stack_b, t_best *best);
+static void	find_best(t_deque *stack_a, t_deque *stack_b, t_best *best);
 static int	calc_num_op(int rotate_a, int rotate_b);
+static void	find_best_init(int **pos_a, int **pos_b, int size);
 
 void	sort_push_to_a(t_deque *stack_a, t_deque *stack_b, t_optimizer *opt)
 {
@@ -42,10 +41,7 @@ static void	find_best(t_deque *stack_a, t_deque *stack_b, t_best *best)
 	int	i;
 	int	now_min;
 
-	pos_a = (int *)malloc(sizeof(int) * deque_size(stack_b));
-	pos_b = (int *)malloc(sizeof(int) * deque_size(stack_b));
-	if (pos_a == NULL || pos_b == NULL)
-		error();
+	find_best_init(&pos_a, &pos_b, deque_size(stack_b));
 	i = -1;
 	now_min = INF;
 	while (++i < deque_size(stack_b))
@@ -64,41 +60,20 @@ static void	find_best(t_deque *stack_a, t_deque *stack_b, t_best *best)
 			best->rotate_b = pos_b[i];
 		}
 	}
-	free(pos_a);
-	free(pos_b);
+	return (free(pos_a), free(pos_b));
 }
 
-static void	multiple_rotate_a(t_deque *stack_a, int rotate_a, t_optimizer *opt)
+static void	find_best_init(int **pos_a, int **pos_b, int size)
 {
-	if (rotate_a > 0)
-	{
-		while (rotate_a--)
-			rotate_up(stack_a, OP_RA, opt);
-	}
-	else
-	{
-		while (rotate_a++)
-			rotate_down(stack_a, OP_RRA, opt);
-	}
-}
-
-static void	multiple_rotate_b(t_deque *stack_b, int rotate_b, t_optimizer *opt)
-{
-	if (rotate_b > 0)
-	{
-		while (rotate_b--)
-			rotate_up(stack_b, OP_RB, opt);
-	}
-	else
-	{
-		while (rotate_b++)
-			rotate_down(stack_b, OP_RRB, opt);
-	}
+	*pos_a = (int *)malloc(sizeof(int) * size);
+	*pos_b = (int *)malloc(sizeof(int) * size);
+	if (*pos_a == NULL || *pos_b == NULL)
+		error();
 }
 
 static int	calc_num_op(int rotate_a, int rotate_b)
 {
-	if (rotate_a > 0 && rotate_b > 0)
+	if (rotate_a >= 0 && rotate_b >= 0)
 	{
 		if (rotate_a > rotate_b)
 			return (rotate_a);
@@ -107,14 +82,13 @@ static int	calc_num_op(int rotate_a, int rotate_b)
 	}
 	else if (rotate_a < 0 && rotate_b < 0)
 	{
-		if (rotate_a < rotate_b)
+		if (rotate_a <= rotate_b)
 			return (-rotate_a);
 		else
 			return (-rotate_b);
 	}
-	else if (rotate_a > 0 && rotate_b < 0)
+	else if (rotate_a >= 0 && rotate_b < 0)
 		return (rotate_a - rotate_b);
 	else
 		return (rotate_b - rotate_a);
 }
-

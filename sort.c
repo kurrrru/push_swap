@@ -6,7 +6,7 @@
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 18:25:07 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/19 17:00:52 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/10/19 21:42:27 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,13 @@ void	sort(t_deque *stack_a, t_deque *stack_b, int *input_array)
 	opt = optimizer_init();
 	if (opt == NULL)
 		error();
-	sort_push_to_b(stack_a, stack_b, input_array, opt);
-	sort_push_to_a(stack_a, stack_b, opt);
+	if (deque_size(stack_a) <= 5)
+		sort_small_case(stack_a, stack_b, opt);
+	else
+	{
+		sort_push_to_b(stack_a, stack_b, input_array, opt);
+		sort_push_to_a(stack_a, stack_b, opt);
+	}
 	optimizer_print(opt, OP_RA, opt->op_count[OP_RA]);
 	optimizer_print(opt, OP_RRA, opt->op_count[OP_RRA]);
 	optimizer_print(opt, OP_RB, opt->op_count[OP_RB]);

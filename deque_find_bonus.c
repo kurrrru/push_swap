@@ -1,34 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pos_to_insert.c                                    :+:      :+:    :+:   */
+/*   deque_find_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/19 19:05:57 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/19 22:42:03 by nkawaguc         ###   ########.fr       */
+/*   Created: 2024/10/19 23:21:30 by nkawaguc          #+#    #+#             */
+/*   Updated: 2024/10/19 23:21:30 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "deque.h"
 
-int	pos_to_insert(t_deque *stack_a, int target)
+int	deque_find(t_deque *deque, int target)
 {
 	int	i;
-	int	size;
-	int	val1;
-	int	val2;
 
 	i = -1;
-	size = deque_size(stack_a);
-	while (++i < size)
+	while (++i < deque_size(deque))
 	{
-		val1 = deque_at_from_front(stack_a, (i + size - 1) % size);
-		val2 = deque_at_from_front(stack_a, i);
-		if (val1 < target && target < val2)
-			return (i);
-		if (val1 > val2 && (val1 < target || target < val2))
+		if (deque_at_from_front(deque, i) == target)
 			return (i);
 	}
-	return (ERROR);
+	return (DEQUE_EXCEPTION_VALUE);
 }
