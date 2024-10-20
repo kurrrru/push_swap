@@ -23,8 +23,7 @@ BONUS_NAME	=	checker
 LIBDIR		=	libft
 LIB			=	libft.a
 CC			=	cc
-# あとで消す
-CFLAGS		=	-Wall -Wextra -Werror -fsanitize=address
+CFLAGS		=	-Wall -Wextra -Werror
 
 .DEFAULT_GOAL = all
 
