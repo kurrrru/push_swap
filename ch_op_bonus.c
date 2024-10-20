@@ -1,28 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   deque_swap_bonus.c                                 :+:      :+:    :+:   */
+/*   ch_op_bonus.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/19 23:21:48 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/19 23:21:49 by nkawaguc         ###   ########.fr       */
+/*   Created: 2024/10/18 21:05:56 by nkawaguc          #+#    #+#             */
+/*   Updated: 2024/10/20 13:49:05 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "deque.h"
+#include "ch_op_bonus.h"
 
-void	deque_swap_front(t_deque *deque)
+void	swap(t_deque *stack)
 {
-	int	front1;
-	int	front2;
+	deque_swap_front(stack);
+}
 
-	if (!deque || deque_size(deque) < 2)
+void	push(t_deque *stack_from, t_deque *stack_to)
+{
+	if (deque_empty(stack_from))
 		return ;
-	front1 = deque_at_from_front(deque, 0);
-	front2 = deque_at_from_front(deque, 1);
-	deque_pop_front(deque);
-	deque_pop_front(deque);
-	deque_push_front(deque, front1);
-	deque_push_front(deque, front2);
+	deque_push_front(stack_to, deque_front(stack_from));
+	deque_pop_front(stack_from);
+}
+
+void	rotate_up(t_deque *stack)
+{
+	deque_rotate_front(stack);
+}
+
+void	rotate_down(t_deque *stack)
+{
+	deque_rotate_back(stack);
 }

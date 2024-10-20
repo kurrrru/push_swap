@@ -1,26 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   deque_find_bonus.c                                 :+:      :+:    :+:   */
+/*   ch_empty_array_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/19 23:21:30 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/19 23:21:30 by nkawaguc         ###   ########.fr       */
+/*   Created: 2024/10/20 13:04:29 by nkawaguc          #+#    #+#             */
+/*   Updated: 2024/10/20 13:04:30 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "deque.h"
+#include "ch_bonus.h"
 
-int	deque_find(t_deque *deque, int target)
+void	empty_array(void)
 {
-	int	i;
+	char	*buf[1];
+	int		read_size;
 
-	i = -1;
-	while (++i < deque_size(deque))
+	read_size = read(STDIN_FILENO, buf, 1);
+	if (read_size == 0)
 	{
-		if (deque_at_from_front(deque, i) == target)
-			return (i);
+		ft_putendl_fd(MSG_OK, STDOUT_FILENO);
+		exit(SUCCESS);
 	}
-	return (DEQUE_EXCEPTION_VALUE);
+	else
+	{
+		ft_putendl_fd(MSG_KO, STDOUT_FILENO);
+		exit(FAILURE);
+	}
 }

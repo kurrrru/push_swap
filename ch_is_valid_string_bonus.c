@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_valid_string.c                                  :+:      :+:    :+:   */
+/*   ch_is_valid_string_bonus.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/14 14:33:05 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/20 14:21:21 by nkawaguc         ###   ########.fr       */
+/*   Created: 2024/10/20 12:55:27 by nkawaguc          #+#    #+#             */
+/*   Updated: 2024/10/20 14:21:47 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "ch_bonus.h"
 
 static int	ft_isspace(char c);
 static int	ft_isnull(char c);
