@@ -6,7 +6,7 @@
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/19 21:37:12 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/19 22:39:51 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/10/20 14:58:36 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 static int	is_sorted(t_deque *stack_a);
 static void	sort_3(t_deque *stack_a, t_optimizer *opt);
-static void	sort_4(t_deque *stack_a, t_deque *stack_b, t_optimizer *opt);
+static void	sort_4(t_deque *stack_a, t_deque *stack_b, t_optimizer *opt,
+				int flag);
 static void	sort_5(t_deque *stack_a, t_deque *stack_b, t_optimizer *opt);
 
 void	sort_small_case(t_deque *stack_a, t_deque *stack_b, t_optimizer *opt)
@@ -32,7 +33,7 @@ void	sort_small_case(t_deque *stack_a, t_deque *stack_b, t_optimizer *opt)
 	else if (size == 3)
 		sort_3(stack_a, opt);
 	else if (size == 4)
-		sort_4(stack_a, stack_b, opt);
+		sort_4(stack_a, stack_b, opt, TRUE);
 	else if (size == 5)
 		sort_5(stack_a, stack_b, opt);
 }
@@ -82,7 +83,8 @@ static void	sort_3(t_deque *stack_a, t_optimizer *opt)
 	}
 }
 
-static void	sort_4(t_deque *stack_a, t_deque *stack_b, t_optimizer *opt)
+static void	sort_4(t_deque *stack_a, t_deque *stack_b, t_optimizer *opt,
+				int flag)
 {
 	int	i;
 
@@ -102,8 +104,11 @@ static void	sort_4(t_deque *stack_a, t_deque *stack_b, t_optimizer *opt)
 			rotate_down(stack_a, OP_RRA, opt);
 	}
 	push(stack_b, stack_a, OP_PA, opt);
-	while (deque_front(stack_a) > deque_back(stack_a))
-		rotate_up(stack_a, OP_RA, opt);
+	if (flag)
+	{
+		while (deque_front(stack_a) > deque_back(stack_a))
+			rotate_up(stack_a, OP_RA, opt);
+	}
 }
 
 static void	sort_5(t_deque *stack_a, t_deque *stack_b, t_optimizer *opt)
@@ -111,7 +116,7 @@ static void	sort_5(t_deque *stack_a, t_deque *stack_b, t_optimizer *opt)
 	int	i;
 
 	push(stack_a, stack_b, OP_PB, opt);
-	sort_4(stack_a, stack_b, opt);
+	sort_4(stack_a, stack_b, opt, FALSE);
 	i = pos_to_insert(stack_a, deque_front(stack_b));
 	if (i > deque_size(stack_a) / 2)
 		i = i - deque_size(stack_a);

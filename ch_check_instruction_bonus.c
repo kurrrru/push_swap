@@ -6,7 +6,7 @@
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/20 13:05:06 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/20 14:38:16 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/10/20 14:53:02 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,27 +59,27 @@ static int	get_op(t_op *op)
 
 static int	is_valid_op(t_op *op, char *buf)
 {
-	if (ft_strncmp(buf, OP_SA_STR, OP_SA_STR_LEN) == 0)
+	if (ft_strncmp(buf, OP_SA_STR, OP_SA_STR_LEN + 1) == 0)
 		*op = OP_SA;
-	else if (ft_strncmp(buf, OP_SB_STR, OP_SB_STR_LEN) == 0)
+	else if (ft_strncmp(buf, OP_SB_STR, OP_SB_STR_LEN + 1) == 0)
 		*op = OP_SB;
-	else if (ft_strncmp(buf, OP_SS_STR, OP_SS_STR_LEN) == 0)
+	else if (ft_strncmp(buf, OP_SS_STR, OP_SS_STR_LEN + 1) == 0)
 		*op = OP_SS;
-	else if (ft_strncmp(buf, OP_PA_STR, OP_PA_STR_LEN) == 0)
+	else if (ft_strncmp(buf, OP_PA_STR, OP_PA_STR_LEN + 1) == 0)
 		*op = OP_PA;
-	else if (ft_strncmp(buf, OP_PB_STR, OP_PB_STR_LEN) == 0)
+	else if (ft_strncmp(buf, OP_PB_STR, OP_PB_STR_LEN + 1) == 0)
 		*op = OP_PB;
-	else if (ft_strncmp(buf, OP_RA_STR, OP_RA_STR_LEN) == 0)
+	else if (ft_strncmp(buf, OP_RA_STR, OP_RA_STR_LEN + 1) == 0)
 		*op = OP_RA;
-	else if (ft_strncmp(buf, OP_RB_STR, OP_RB_STR_LEN) == 0)
+	else if (ft_strncmp(buf, OP_RB_STR, OP_RB_STR_LEN + 1) == 0)
 		*op = OP_RB;
-	else if (ft_strncmp(buf, OP_RR_STR, OP_RR_STR_LEN) == 0)
+	else if (ft_strncmp(buf, OP_RR_STR, OP_RR_STR_LEN + 1) == 0)
 		*op = OP_RR;
-	else if (ft_strncmp(buf, OP_RRA_STR, OP_RRA_STR_LEN) == 0)
+	else if (ft_strncmp(buf, OP_RRA_STR, OP_RRA_STR_LEN + 1) == 0)
 		*op = OP_RRA;
-	else if (ft_strncmp(buf, OP_RRB_STR, OP_RRB_STR_LEN) == 0)
+	else if (ft_strncmp(buf, OP_RRB_STR, OP_RRB_STR_LEN + 1) == 0)
 		*op = OP_RRB;
-	else if (ft_strncmp(buf, OP_RRR_STR, OP_RRR_STR_LEN) == 0)
+	else if (ft_strncmp(buf, OP_RRR_STR, OP_RRR_STR_LEN + 1) == 0)
 		*op = OP_RRR;
 	else
 		error();

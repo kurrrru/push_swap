@@ -6,7 +6,7 @@
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 11:53:34 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/13 11:58:13 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/10/20 15:02:24 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	deque_pop_front(t_deque *deque)
 
 void	deque_pop_back(t_deque *deque)
 {
-	if (deque_empty(deque))
+	if (!deque || deque_empty(deque))
 		return ;
 	deque->tail = (deque->tail + 1) % deque->limit;
 }
