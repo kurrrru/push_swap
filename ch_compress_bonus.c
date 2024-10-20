@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ch_compress_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: nkawaguc <nkawaguc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/20 12:24:59 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/20 12:50:33 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/10/20 17:43:42 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ch_bonus.h"
-#include <stdio.h>
 
 static void	quick_sort(int *arr, int left, int right);
 static void	ft_swap(int *a, int *b);

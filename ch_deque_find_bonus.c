@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ch_deque_find_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: nkawaguc <nkawaguc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/20 12:23:29 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/20 12:23:30 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/10/20 17:44:18 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "deque.h"
+#include "ch_deque_bonus.h"
 
 int	deque_find(t_deque *deque, int target)
 {

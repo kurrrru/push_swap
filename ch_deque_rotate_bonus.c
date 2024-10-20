@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ch_deque_rotate_bonus.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: nkawaguc <nkawaguc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/20 12:23:45 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/20 12:23:46 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/10/20 17:44:34 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "deque.h"
+#include "ch_deque_bonus.h"
 
 void	deque_rotate_front(t_deque *deque)
 {

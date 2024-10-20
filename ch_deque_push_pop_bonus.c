@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ch_deque_push_pop_bonus.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: nkawaguc <nkawaguc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/20 12:23:38 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/20 15:02:10 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/10/20 17:44:28 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "deque.h"
+#include "ch_deque_bonus.h"
 
 void	deque_push_front(t_deque *deque, int value)
 {

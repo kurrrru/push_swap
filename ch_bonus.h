@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ch_bonus.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: nkawaguc <nkawaguc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/20 12:23:59 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/20 14:23:43 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/10/20 17:45:15 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 # include <limits.h>
 # include "ch_deque_bonus.h"
 # include "ch_op_bonus.h"
-# include "libft/libft.h"
 # include "ch_basic_bonus.h"
+# include "libft/libft.h"
 
 # define INF INT_MAX
 # define VALID_ARGC_MIN 2

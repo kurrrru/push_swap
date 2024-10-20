@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ch_deque_access_bonus.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: nkawaguc <nkawaguc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/20 12:23:21 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/20 12:23:22 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/10/20 17:43:54 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "deque.h"
+#include "ch_deque_bonus.h"
 
 int	deque_front(t_deque *deque)
 {
