@@ -6,7 +6,7 @@
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 14:33:05 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/20 14:21:21 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/10/20 14:38:52 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ static int	ft_isnull(char c);
 
 int	is_valid_string(const char *str)
 {
-	int	i;
-	long sign;
-	long num;
+	int		i;
+	long	sign;
+	long	num;
 
 	i = 0;
 	while (ft_isspace(str[i]))

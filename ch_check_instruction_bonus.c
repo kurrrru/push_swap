@@ -6,7 +6,7 @@
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/20 13:05:06 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/20 14:03:34 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/10/20 14:38:16 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ static int	is_sorted(t_deque *stack_a);
 
 int	is_correct_instruction(t_deque *stack_a, t_deque *stack_b)
 {
-	t_op op;
-	int result;
+	t_op	op;
+	int		result;
 
 	while (TRUE)
 	{
@@ -39,18 +39,17 @@ static int	get_op(t_op *op)
 	char	buf[4];
 	int		read_size;
 
+	ft_bzero(buf, 4);
 	read_size = read(STDIN_FILENO, buf, 3);
 	if (read_size == ERROR || read_size == 1 || read_size == 2)
 		error();
 	if (read_size == 0)
 		return (FALSE);
 	if (buf[2] == '\n')
-	{
 		buf[2] = '\0';
-	}
 	else
 	{
-		read_size = read(STDIN_FILENO, buf + 2, 1);
+		read_size = read(STDIN_FILENO, buf + 3, 1);
 		if (read_size == ERROR || buf[3] != '\n')
 			error();
 		buf[3] = '\0';
